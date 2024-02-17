@@ -18,6 +18,9 @@ public class CarServiceImpl implements CarService {
     }};
     @Override
     public List<Car> getCars(int count) {
+        if (count >= 5) {
+            return cars;
+        }
         return cars.stream().limit(count).toList();
     }
 }
